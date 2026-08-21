@@ -33,6 +33,8 @@ LEFT JOIN stations ss ON t.start_station_id = ss."ID"
 LEFT JOIN stations es ON t.end_station_id = es."ID" 
 LIMIT 20;
 ```
+**Result:**
+![Multi-Table Joins Result](query_1_joins_result.png)
 
 ### 2. Demographic Riding Habits (Query Optimization)
 **Objective:** Calculate the total number of rides taken by "senior" riders (users older than 60), grouped by individual.
@@ -57,6 +59,8 @@ JOIN RidersAge r ON t.user_id = r.user_id
 GROUP BY r.user_name
 ORDER BY total_rides DESC;
 ```
+**Result:**
+![Demographic Riding Habits Result](query_2_cte_result.png)
 
 ### 3. User Retention Tracking (Window Functions)
 **Objective:** Calculate how many minutes passed between a user's previous ride and their current ride.
@@ -83,6 +87,8 @@ WHERE previous_ride_start_time IS NOT NULL
 ORDER BY user_id, started_at
 LIMIT 10;
 ```
+**Result:**
+![User Retention Tracking Result](query_3_window_result.png)
 
 ---
 
